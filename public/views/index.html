@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="/assets/lib/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/index.css">
     <link rel="stylesheet" href="/assets/css/common.css">
-    <link rel="stylesheet" href="../assets/lib/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../assets/lib/css/swiper.min.css">
+    <link rel="stylesheet" href="/assets/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/lib/css/swiper.min.css">
 
     <script src="/assets/lib/js/jquery-3.4.1.min.js"></script>
     <script src="/assets/lib/js/bootstrap.min.js"></script>
@@ -32,14 +32,11 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">第一新闻</a>
+                        <a class="navbar-brand" href="index.html">第一新闻</a>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">奇趣事<span class="sr-only">(current)</span></a></li>
-                            <li><a href="#">科技潮</a></li>
-                            <li><a href="#">会生活</a></li>
-                            <li><a href="#">美奇迹</a></li>
+                        <ul class="nav navbar-nav" id="headerNav">
+                            
                         </ul>
                         <form class="navbar-form navbar-left">
                             <div class="form-group">
@@ -47,9 +44,9 @@
                             </div>
                             <button type="submit" class="btn btn-default">搜索</button>
                         </form>
-                        <ul class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-right" id="info">
                             <li><a href="login.html">登录</a></li>
-                            <li><a href="javascript:;" class="register">注册</a></li>
+                            <li><a href="register.html">注册</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
@@ -65,10 +62,7 @@
                     </div>
                     <!-- 侧边导航栏 -->
                     <ul class="navMenu clearfix">
-                        <li><i class="fa fa-glass"></i><a href="list.html">奇趣事</a></li>
-                        <li><i class="fa fa-glass"></i><a href="javascript:;">科技潮</a></li>
-                        <li><i class="fa fa-glass"></i><a href="javascript:;">会生活</a></li>
-                        <li><i class="fa fa-glass"></i><a href="javascript:;">美奇迹</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -76,48 +70,15 @@
                 <div class="row">
                     <!-- 轮播图 -->
                     <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><a href="javascript:;"><img src="../assets//img/1.jpg" alt=""></a>
-                                <p>第一张</p>
-                            </div>
-                            <div class="swiper-slide"><a href="javascript:;"><img src="../assets//img/2.png" alt=""></a>
-                                <p>第二张</p>
-                            </div>
-                            <div class="swiper-slide"><a href="javascript:;"><img src="../assets//img/3.jpg" alt=""></a>
-                                <p>第三张</p>
-                            </div>
-                            <div class="swiper-slide"><a href="javascript:;"><img src="../assets//img/4.jpg" alt=""></a>
-                                <p>第四张</p>
-                            </div>
-                            <div class="swiper-slide"><a href="javascript:;"><img src="../assets//img/5.png" alt=""></a>
-                                <p>第五张</p>
-                            </div>
-                        </div>
-                        <!-- Add Arrows -->
-                        <div class="swiper-button-next swiper-btn"></div>
-                        <div class="swiper-button-prev swiper-btn"></div>
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
+
                     </div>
                     <!-- 热门推荐 -->
                     <div class="popular">
                         <div class="title">
                             <h3>热门推荐</h3>
                         </div>
-                        <ul class="clearfix">
-                            <li><a href="javascript:;">
-                                    <img src="../assets/img/5.png" alt="">
-                                    <p>第一张图</p>
-                                </a></li>
-                            <li><a href="javascript:;"><img src="../assets/img/5.png" alt="">
-                                    <p>第二张图</p>
-                                </a></li>
-                            <li><a href="javascript:;"><img src="/assets/img/5.png" alt="">
-                                    <p>第三张图</p>
-                                </a></li>
-                            <li><a href="javascript:;"><img src="../assets/img/5.png" alt="">
-                                    <p>第四张图</p>
-                                </a></li>
+                        <ul class="clearfix popular-upload">
+
                         </ul>
                     </div>
                     <!-- 最新发布 -->
@@ -126,63 +87,7 @@
                             <h3>最新发布</h3>
                         </div>
                         <div class="main">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="main-title">
-                                        <a href="javascipt:;"><i>奇趣事</i>星球大战：原力觉醒视频演示 电影票68</a>
-                                    </div>
-                                    <p class="author">admin发表于2020-01-18</p>
-                                    <p class="content">
-                                        星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯
-                                    </p>
-                                    <div class="meta">
-                                        <i>阅读(2000)</i>
-                                        <i>评论(50)</i>
-                                        <a href="javascript:;"><i class="fa fa-thumbs-up"></i>点赞(167)</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 cover hidden-xs">
-                                    <a href="javascript:;"><img src="../assets/img/5.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="main-title">
-                                        <a href="javascipt:;"><i>奇趣事</i>星球大战：原力觉醒视频演示 电影票68</a>
-                                    </div>
-                                    <p class="author">admin发表于2020-01-18</p>
-                                    <p class="content">
-                                        星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯
-                                    </p>
-                                    <div class="meta">
-                                        <i>阅读(2000)</i>
-                                        <i>评论(50)</i>
-                                        <a href="javascript:;"><i class="fa fa-thumbs-up"></i>点赞(167)</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 cover hidden-xs">
-                                    <a href="javascript:;"><img src="../assets/img/5.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="main-title">
-                                        <a href="javascipt:;"><i>奇趣事</i>星球大战：原力觉醒视频演示 电影票68</a>
-                                    </div>
-                                    <p class="author">admin发表于2020-01-18</p>
-                                    <p class="content">
-                                        星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯
-                                    </p>
-                                    <div class="meta">
-                                        <i>阅读(2000)</i>
-                                        <i>评论(50)</i>
-                                        <a href="javascript:;"><i class="fa fa-thumbs-up"></i>点赞(167)</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 cover hidden-xs">
-                                    <a href="javascript:;"><img src="../assets/img/5.png" alt=""></a>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -204,32 +109,8 @@
                         <div class="title">
                             <h3>随机推荐</h3>
                         </div>
-                        <div class="row randomPost">
-                            <div class="col-md-8">
-                                <p class="content"><a href="javascript:;">废灯泡的14种玩法 妹子见了都会心动</a></p>
-                                <i>阅读(123)</i>
-                            </div>
-                            <div class="col-md-4 cover hidden-xs">
-                                <a href="#"><img src="../assets/img/5.png" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="row randomPost">
-                            <div class="col-md-8">
-                                <p class="content"><a href="javascript:;">废灯泡的14种玩法 妹子见了都会心动</a></p>
-                                <i>阅读(123)</i>
-                            </div>
-                            <div class="col-md-4 cover hidden-xs">
-                                <a href="#"><img src="../assets/img/5.png" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="row randomPost">
-                            <div class="col-md-8">
-                                <p class="content"><a href="javascript:;">废灯泡的14种玩法 妹子见了都会心动</a></p>
-                                <i>阅读(123)</i>
-                            </div>
-                            <div class="col-md-4 cover hidden-xs">
-                                <a href="#"><img src="../assets/img/5.png" alt=""></a>
-                            </div>
+                        <div class="randomPost">
+
                         </div>
                     </div>
                     <!-- 最新评论 -->
@@ -237,34 +118,8 @@
                         <div class="title">
                             <h3>最新评论</h3>
                         </div>
-                        <ul>
-                            <li>
-                                <div class="avatar">
-                                    <img src="../assets/img/5.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <p class="info">鲜活2020-1-01-18说：</p>
-                                    <p class="comment">挺会玩的</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="avatar">
-                                    <img src="../assets/img/5.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <p class="info">鲜活2020-1-01-18说：</p>
-                                    <p class="comment">挺会玩的</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="avatar">
-                                    <img src="../assets/img/5.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <p class="info">鲜活2020-1-01-18说：</p>
-                                    <p class="comment">挺会玩的</p>
-                                </div>
-                            </li>
+                        <ul class="newContent">
+
                         </ul>
                     </div>
                 </div>
@@ -273,30 +128,219 @@
     </div>
 
     <!-- 模板部分 -->
+    <script type="text/html" id="tpl1">
+        {{if username==''}}
+        <li><a href="login.html">登录</a></li>
+        <li><a href="register.html">注册</a></li>
+        {{else if username!=''}}
+        <li><a href="javascript:;">{{username}}</a></li>
+        <li><a href="javascript:;">{{roleName}}</a></li>
+            {{if code!=2&&code!=''}}
+                <li><a href="javascript:;" id="gotoBack">去后台</a></li>
+            {{/if}}
+            <li><a href="javascript:;" id="logout">退出</a></li>
+        {{/if}}
+    </script>
 
+    <script type="text/html" id="tpl2">
+        {{each arr}}
+        <li><i class="fa {{$value.cateIcon}}"></i><a href="list.html?id={{$value._id}}">{{$value.cateName}}</a></li>
+        {{/each}}
+    </script>
 
+    <script type="text/html" id="tpl3">
+        <div class="swiper-wrapper">
+            {{each swiper}}
+            <div class="swiper-slide">
+            <a href="detail.html?id={{$value.link._id}}">
+                <img src="http://localhost/{{$value.swiper}}" alt="">
+            </a>
+            <p>{{$value.title}}</p>
+            </div>
+            {{/each}}
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-btn"></div>
+        <div class="swiper-button-prev swiper-btn"></div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </script>
+    <script type="text/html" id="tpl4">
+        {{each arr}}
+        <li>
+            <a href="detail.html?id={{$value._id}}">
+                <img src="http://localhost/{{$value.cover}}">
+                <p>{{$value.title}}</p>
+            </a>
+        </li>
+        {{/each}}
+    </script>
 
+    <script type="text/html" id="tpl5">
+        {{each arr}}
+        <div class="row">
+            <div class="col-md-9">
+                <div class="main-title">
+                    <a href="detail.html?id={{$value._id}}"><i>{{$value.categories.cateName}}</i>{{$value.title}}</a>
+                </div>
+                <p class="author"><i>{{$value.author.username}}</i>发布于<i>{{$imports.dateFomate($value.uploadDate)}}</i>
+                </p>
+                <p class="content">
+                    {{@$value.content}}
+                </p>
+                <div class="meta">
+                    <i>阅读({{$value.read}})</i>
+                    <i>评论({{$value.comment}})</i>
+                    <a href="javascript:;"><i class="fa fa-thumbs-up"></i>点赞({{$value.praise}})</a>
+                </div>
+            </div>
+            <div class="col-md-3 cover hidden-xs">
+                <a href="javascript:;"><img src="http://localhost/{{$value.cover}}" alt=""></a>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
+    <script type="text/html" id="tpl6">
+        {{each arr}}
+        <div class="row randomPost">
+            <div class="col-md-8">
+                <p class="content"><a href="detail.html?id={{$value._id}}">{{$value.title}}</a></p>
+                <i>阅读({{$value.read}})</i>
+            </div>
+            <div class="col-md-4 cover hidden-xs">
+                <a href="detail.html?id={{$value._id}}"><img src="http://localhost/{{$value.cover}}" alt=""></a>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
+    <script type="text/html" id="tpl7">
+        {{each arr}}
+        <li>
+            <div class="avatar">
+                <img src="http://localhost/{{$value.article.author.avatar}}" alt="">
+            </div>
+            <div class="content">
+                <p class="info"><i class="author">{{$value.author}}</i>于<i>{{$imports.dateFomate($value.createDate)}}</i>说:</p>
+                <p class="comment">{{$value.content}}</p>
+            </div>
+        </li>
+        {{/each}}
+    </script>
+
+    <script type="text/html" id="tpl12">
+        {{each arr1}}
+        <li><a href="list.html?id={{$value._id}}">{{$value.cateName}}</a></li>
+        {{/each}}
+    </script>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/index.js"></script>
     <script>
-        $('.register').click(function () {
-            location.href = "http://localhost:3000/register"
-        })
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-        });
+        // var html = template('tpl1', {
+        //     username: window.sessionStorage.getItem('username'),
+        //     roleName: JSON.parse(window.sessionStorage.getItem('role')).roleName,
+        //     code: JSON.parse(window.sessionStorage.getItem('role')).code
+        // })
+        // document.getElementById('info').innerHTML = html
+        // $('#logout').on('click', function () {
+        //     window.sessionStorage.clear()
+        //     location.href = 'index.html'
+        // })
+        // $('#gotoBack').on('click', function () {
+        //     location.href = "http://localhost:3000/login"
+        // })
+        // $.ajax({
+        //     type: 'get',
+        //     url: 'http://localhost/privates/categories',
+        //     success: function (data) {
+        //         var html = template('tpl2', {
+        //             arr: data.data
+        //         })
+        //         $('.navMenu').html(html)
+        //     }
+        // })
+        // $.ajax({
+        //     type: 'get',
+        //     url: 'http://localhost/privates/swiper',
+        //     success: function (data) {
+        //         var html = template('tpl3', {
+        //             swiper: data.data
+        //         })
+        //         $('.swiper-container').html(html)
+        //         var swiper = new Swiper('.swiper-container', {
+        //             slidesPerView: 1,
+        //             spaceBetween: 30,
+        //             loop: true,
+        //             pagination: {
+        //                 el: '.swiper-pagination',
+        //                 clickable: true,
+        //             },
+        //             navigation: {
+        //                 nextEl: '.swiper-button-next',
+        //                 prevEl: '.swiper-button-prev',
+        //             },
+        //             autoplay: {
+        //                 delay: 2500,
+        //                 disableOnInteraction: false,
+        //             },
+        //         });
+        //     }
+        // })
+        // // 每个30s重新获取
+        // $.ajax({
+        //     type: 'get',
+        //     url: 'http://localhost/privates/popular',
+        //     success: function (data) {
+        //         let postArr = new Set()
+        //         while (postArr.size < 4) {
+        //             var num = rd(data.data.length, 0)
+        //             postArr.add(data.data[num])
+        //         }
+        //         var html = template('tpl4', {
+        //             arr: [...postArr]
+        //         })
+        //         $('.popular-upload').html(html)
+        //     }
+        // })
+
+        // $.ajax({
+        //     type: 'get',
+        //     url: 'http://localhost/privates/newest',
+        //     success: function (data) {
+        //         var html = template('tpl5', {
+        //             arr: data.data
+        //         })
+        //         $('.newest .main').html(html)
+        //     }
+        // })
+
+        // $.ajax({
+        //     type: 'get',
+        //     url: 'http://localhost/privates/randomPost',
+        //     success: function (data) {
+        //         let randomPost = new Set()
+        //         while (randomPost.size <= 2) {
+        //             var num = rd(data.data.length, 0)
+        //             randomPost.add(data.data[num])
+        //         }
+        //         var html = template('tpl6', {
+        //             arr: [...randomPost]
+        //         })
+        //         $('.random .randomPost').html(html)
+        //     }
+        // })
+    
+        // $.ajax({
+        //     type:'get',
+        //     url:'http://localhost/privates/newComment',
+        //     success:function(data){
+        //         var html=template('tpl7',{
+        //             arr:data.data
+        //         })
+        //         $('.newContent').html(html)
+        //     }
+        // })
     </script>
 </body>
 

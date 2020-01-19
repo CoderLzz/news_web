@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/register.css">
+
+    <script src="/assets/lib/js/jquery-3.4.1.min.js"></script>
+    <script src="/assets/lib/js/bootstrap.min.js"></script>
+    <title>第一新闻</title>
+</head>
+
+<body>
+    <div class="login_container">
+        <div class="title">
+            <h3>注册</h3>
+        </div>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="exampleInputEmail1">用户名</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名" name="username">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">邮箱</label>
+                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="邮箱" name="email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">密码</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码" name="password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">确认密码</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="确认密码"
+                    name="ispassword">
+            </div>
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="radio" name="role" id="inlineRadio1" value="2" checked> 普通用户
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="role" id="inlineRadio2" value="1"> 作者
+                </label>
+            </div>
+            <div class="form-group btn1">
+                <button type="submit" class="btn btn-primary">注册</button>
+                <button type="reset" class="btn btn-default reset">清空</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        function serialize(ele) {
+            var f = ele.serializeArray()
+            var obj = {}
+            f.forEach(item => {
+                obj[item.name] = item.value
+            })
+            return obj
+        }
+
+        $('#registerForm').on('submit', function (e) {
+            e.preventDefault()
+            var result = serialize($(this))
+            if (result.username.trim().length == 0) {
+                return alert('用户名不能为空')
+            } else {
+                if (result.username.trim().length < 2 || result.username.trim().length > 6) {
+                    return alert('用户名长度必须在2到6之间')
+                }
+            }
+            if (result.email.trim().length == 0) {
+                return alert('邮箱不能为空')
+            } else {
+                var regx = /^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/;
+                if (!regx.test(result.email.trim())) {
+                    return alert('邮箱不合法')
+                }
+            }
+            if (result.password.trim().length == 0) {
+                return alert('密码不能为空')
+            } else {
+                if (result.password.trim().length < 5 || result.password.trim().length > 15) {
+                    return alert('密码长度必须在5到15之间')
+                } else {
+                    if (result.password.trim() != result.ispassword.trim()) {
+                        return alert('两次密码不一样')
+                    }
+                }
+            }
+            if (result.ispassword.trim().length == 0) {
+                return alert('两次密码不一样')
+            }
+            delete result.ispassword
+            $.ajax({
+                type: 'post',
+                url: 'http://localhost/register',
+                data: result,
+                success: function (data) {
+                    $('.reset').click()
+                    location.href="login.html"
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -132,7 +132,7 @@
 .popular li:last-child{
     margin-right: 0px;
 }
-.popular .li p{
+.popular li p{
     margin-top: 5px !important;
 }
 /* 最新发布 */
@@ -189,6 +189,9 @@
     font-size: 12px;
     color: #666;
     margin-top: 10px;
+}
+.main .author i:first-child{
+    margin-right: 5px;
 }
 .main .content{
     margin-top: 10px;
@@ -294,6 +297,13 @@
 }
 .newComment .content{
     margin: 15px 0 15px 10px;
+    font-size: 12px;
+}
+.newComment .content .info i:first-child{
+    margin-right: 3px;
+}
+.newComment .content .info i:last-child{
+    margin: 0px 3px;
 }
 .content .comment{
     margin-top: 5px;

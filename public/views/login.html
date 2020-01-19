@@ -18,18 +18,40 @@
         <div class="title">
             <h3>新闻登录</h3>
         </div>
-        <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">邮箱</span>
-            <input type="text" class="form-control" placeholder="email" aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">密码</span>
-            <input type="password" class="form-control" placeholder="password" aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group btn1">
-            <button type="button" class="btn btn-primary">登录</button>
-        </div>
+        <form id="loginForm">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">邮箱</span>
+                <input type="text" class="form-control" placeholder="email" aria-describedby="basic-addon1" name="email">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">密码</span>
+                <input type="password" class="form-control" placeholder="password" aria-describedby="basic-addon1" name="password">
+            </div>
+            <div class="input-group btn1">
+                <button type="submit" class="btn btn-primary">登录</button>
+            </div>
+        </form>
     </div>
+
+    <script>
+        $('#loginForm').on('submit',function(e){
+            e.preventDefault()
+            var form=$(this).serialize()
+            $.ajax({
+                type:'post',
+                url:'http://localhost/login',
+                data:form,
+                success:function(data){
+                    console.log(data);
+                    window.sessionStorage.setItem('token',data.data.token)
+                    window.sessionStorage.setItem('username',data.data.username)
+                    window.sessionStorage.setItem('role',JSON.stringify(data.data.role))
+                    location.href="index.html"
+                }
+            })
+        })
+    
+    </script>
 </body>
 
 </html>

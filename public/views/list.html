@@ -12,6 +12,7 @@
 
     <script src="/assets/lib/js/jquery-3.4.1.min.js"></script>
     <script src="/assets/lib/js/bootstrap.min.js"></script>
+    <script src="/assets/lib/js/template-web.js"></script>
     <title>第一新闻</title>
 </head>
 
@@ -29,14 +30,11 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">第一新闻</a>
+                        <a class="navbar-brand" href="index.html">第一新闻</a>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">奇趣事<span class="sr-only">(current)</span></a></li>
-                            <li><a href="#">科技潮</a></li>
-                            <li><a href="#">会生活</a></li>
-                            <li><a href="#">美奇迹</a></li>
+                        <ul class="nav navbar-nav" id="headerNav">
+                            
                         </ul>
                         <form class="navbar-form navbar-left">
                             <div class="form-group">
@@ -44,7 +42,7 @@
                             </div>
                             <button type="submit" class="btn btn-default">搜索</button>
                         </form>
-                        <ul class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-right" id="info">
                             <li><a href="javascript:;" class="login">登录</a></li>
                             <li><a href="javascript:;" class="register">注册</a></li>
                         </ul>
@@ -61,10 +59,7 @@
                     </div>
                     <!-- 侧边导航栏 -->
                     <ul class="navMenu clearfix">
-                        <li><i class="fa fa-glass"></i><a href="javascript:;">奇趣事</a></li>
-                        <li><i class="fa fa-glass"></i><a href="javascript:;">科技潮</a></li>
-                        <li><i class="fa fa-glass"></i><a href="javascript:;">会生活</a></li>
-                        <li><i class="fa fa-glass"></i><a href="javascript:;">美奇迹</a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -73,66 +68,10 @@
                     <!-- 最新发布 -->
                     <div class="newest">
                         <div class="title">
-                            <h3>奇趣事</h3>
+                            
                         </div>
                         <div class="main">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="main-title">
-                                        <a href="javascipt:;"><i>奇趣事</i>星球大战：原力觉醒视频演示 电影票68</a>
-                                    </div>
-                                    <p class="author">admin发表于2020-01-18</p>
-                                    <p class="content">
-                                        星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯
-                                    </p>
-                                    <div class="meta">
-                                        <i>阅读(2000)</i>
-                                        <i>评论(50)</i>
-                                        <a href="javascript:;"><i class="fa fa-thumbs-up"></i>点赞(167)</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 cover hidden-xs">
-                                    <a href="javascript:;"><img src="../assets/img/5.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="main-title">
-                                        <a href="javascipt:;"><i>奇趣事</i>星球大战：原力觉醒视频演示 电影票68</a>
-                                    </div>
-                                    <p class="author">admin发表于2020-01-18</p>
-                                    <p class="content">
-                                        星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯
-                                    </p>
-                                    <div class="meta">
-                                        <i>阅读(2000)</i>
-                                        <i>评论(50)</i>
-                                        <a href="javascript:;"><i class="fa fa-thumbs-up"></i>点赞(167)</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 cover hidden-xs">
-                                    <a href="javascript:;"><img src="../assets/img/5.png" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="main-title">
-                                        <a href="javascipt:;"><i>奇趣事</i>星球大战：原力觉醒视频演示 电影票68</a>
-                                    </div>
-                                    <p class="author">admin发表于2020-01-18</p>
-                                    <p class="content">
-                                        星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯，星球大战:原力觉醒：《星球大战:原力觉醒》中国首映盛典红毯
-                                    </p>
-                                    <div class="meta">
-                                        <i>阅读(2000)</i>
-                                        <i>评论(50)</i>
-                                        <a href="javascript:;"><i class="fa fa-thumbs-up"></i>点赞(167)</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 cover hidden-xs">
-                                    <a href="javascript:;"><img src="../assets/img/5.png" alt=""></a>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -154,32 +93,8 @@
                         <div class="title">
                             <h3>随机推荐</h3>
                         </div>
-                        <div class="row randomPost">
-                            <div class="col-md-8">
-                                <p class="content"><a href="javascript:;">废灯泡的14种玩法 妹子见了都会心动</a></p>
-                                <i>阅读(123)</i>
-                            </div>
-                            <div class="col-md-4 cover hidden-xs">
-                                <a href="#"><img src="../assets/img/5.png" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="row randomPost">
-                            <div class="col-md-8">
-                                <p class="content"><a href="javascript:;">废灯泡的14种玩法 妹子见了都会心动</a></p>
-                                <i>阅读(123)</i>
-                            </div>
-                            <div class="col-md-4 cover hidden-xs">
-                                <a href="#"><img src="../assets/img/5.png" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="row randomPost">
-                            <div class="col-md-8">
-                                <p class="content"><a href="javascript:;">废灯泡的14种玩法 妹子见了都会心动</a></p>
-                                <i>阅读(123)</i>
-                            </div>
-                            <div class="col-md-4 cover hidden-xs">
-                                <a href="#"><img src="../assets/img/5.png" alt=""></a>
-                            </div>
+                        <div class="randomPost">
+
                         </div>
                     </div>
                     <!-- 最新评论 -->
@@ -187,34 +102,8 @@
                         <div class="title">
                             <h3>最新评论</h3>
                         </div>
-                        <ul>
-                            <li>
-                                <div class="avatar">
-                                    <img src="../assets/img/5.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <p class="info">鲜活2020-1-01-18说：</p>
-                                    <p class="comment">挺会玩的</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="avatar">
-                                    <img src="../assets/img/5.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <p class="info">鲜活2020-1-01-18说：</p>
-                                    <p class="comment">挺会玩的</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="avatar">
-                                    <img src="../assets/img/5.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <p class="info">鲜活2020-1-01-18说：</p>
-                                    <p class="comment">挺会玩的</p>
-                                </div>
-                            </li>
+                        <ul class="newContent">
+                            
                         </ul>
                     </div>
                 </div>
@@ -222,14 +111,90 @@
         </div>
     </div>
 
-    <script>
-        $('.login').click(function () {
-            location.href = "http://localhost:3000/login"
-        })
-        $('.register').click(function () {
-            location.href = "http://localhost:3000/register"
-        })
+    <!-- 模板部分 -->
+    <script type="text/html" id="tpl1">
+        {{if username==''}}
+        <li><a href="login.html">登录</a></li>
+        <li><a href="register.html">注册</a></li>
+        {{else if username!=''}}
+        <li><a href="javascript:;">{{username}}</a></li>
+        <li><a href="javascript:;">{{roleName}}</a></li>
+            {{if code!=2&&code!=''}}
+                <li><a href="javascript:;" id="gotoBack">去后台</a></li>
+            {{/if}}
+            <li><a href="javascript:;" id="logout">退出</a></li>
+        {{/if}}
     </script>
+
+    <script type="text/html" id="tpl2">
+        {{each arr}}
+        <li><i class="fa {{$value.cateIcon}}"></i><a href="list.html?id={{$value._id}}">{{$value.cateName}}</a></li>
+        {{/each}}
+    </script>
+
+    <script type="text/html" id="tpl6">
+        {{each arr}}
+        <div class="row randomPost">
+            <div class="col-md-8">
+                <p class="content"><a href="detail.html?id={{$value._id}}">{{$value.title}}</a></p>
+                <i>阅读({{$value.read}})</i>
+            </div>
+            <div class="col-md-4 cover hidden-xs">
+                <a href="detail.html?id={{$value._id}}"><img src="http://localhost/{{$value.cover}}" alt=""></a>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
+    <script type="text/html" id="tpl7">
+        {{each arr}}
+        <li>
+            <div class="avatar">
+                <img src="http://localhost/{{$value.article.author.avatar}}" alt="">
+            </div>
+            <div class="content">
+                <p class="info"><i>{{$value.author}}</i>于<i>{{$imports.dateFomate($value.createDate)}}</i>说:</p>
+                <p class="comment">{{$value.content}}</p>
+            </div>
+        </li>
+        {{/each}}
+    </script>
+    <script type="text/html" id="tpl8">
+        {{each arr}}
+        <div class="row">
+            <div class="col-md-9">
+                <div class="main-title">
+                    <a href="detail.html?id={{$value._id}}"><i>{{$value.categories.cateName}}</i>
+                        {{$value.title}}</a>
+                </div>
+                <p class="author"><i>{{$value.author.username}}</i>发布于<i>{{$imports.dateFomate  ($value.uploadDate)}}</i>
+                </p>
+                <p class="content">
+                    {{@$value.content}}
+                </p>
+                <div class="meta">
+                    <i>阅读({{$value.read}})</i>
+                    <i>评论({{$value.comment}})</i>
+                    <a href="javascript:;"><i class="fa fa-thumbs-up"></i>点赞({{$value.praise}})</a>
+                </div>
+            </div>
+            <div class="col-md-3 cover hidden-xs">
+                <a href="javascript:;"><img src="http://localhost/{{$value.cover}}" alt=""></a>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script type="text/html" id="tpl10">
+        <h3>{{cateName}}</h3>
+    </script>
+    <script type="text/html" id="tpl12">
+        {{each arr1}}
+        <li><a href="list.html?id={{$value._id}}">{{$value.cateName}}</a></li>
+        {{/each}}
+    </script>
+
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/list.js"></script>
 </body>
 
 </html>
