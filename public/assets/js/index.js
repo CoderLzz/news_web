@@ -2,7 +2,6 @@ $.ajax({
     type: 'get',
     url: 'http://localhost/privates/swiper',
     success: function (data) {
-        console.log(data);
         var html = template('tpl3', {
             swiper: data.data
         })
@@ -49,13 +48,27 @@ $.ajax({
     url: 'http://localhost/privates/newest',
     success: function (data) {
         var newestPost=new Set()
-        while(newestPost.size<3){
+        while(newestPost.size<=4){
             var num=rd(data.data.length,0)
             newestPost.add(data.data[num])
         }
         var html = template('tpl5', {
-            arr: [...newestPost]
+            arr: [...newestPost],
+            flag:window.sessionStorage.getItem('username')
         })
         $('.newest .main').html(html)
     }
+})
+
+$('.newest .main').on('click','#praisePost',function(){
+    var praise=Number($(this).text().split('(')[1].split(')')[0])+1
+    $(this).html('<i class="fa fa-thumbs-up"></i>点赞('+praise+')')
+    var postId=$(this).attr('data-id')
+    $.ajax({
+        type:'put',
+        url:'http://localhost/privates/praise/'+postId,
+        data:{
+            praise:praise
+        }
+    })
 })

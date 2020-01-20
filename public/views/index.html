@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="/assets/css/common.css">
     <link rel="stylesheet" href="/assets/lib/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/lib/css/swiper.min.css">
+    <link rel="shortcut icon" href="http://localhost/favicon/favicon.ico" type="image/x-icon">
 
     <script src="/assets/lib/js/jquery-3.4.1.min.js"></script>
     <script src="/assets/lib/js/bootstrap.min.js"></script>
     <script src="/assets/lib/js/swiper.min.js"></script>
     <script src="/assets/lib/js/template-web.js"></script>
-    <title>第一新闻</title>
+    <!-- <title>第一新闻</title> -->
 </head>
 
 <body>
@@ -40,9 +41,9 @@
                         </ul>
                         <form class="navbar-form navbar-left">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="输入关键字">
+                                <input type="text" class="form-control" placeholder="输入关键字" id="searchIn">
                             </div>
-                            <button type="submit" class="btn btn-default">搜索</button>
+                            <button type="submit" class="btn btn-default" id="search">搜索</button>
                         </form>
                         <ul class="nav navbar-nav navbar-right" id="info">
                             <li><a href="login.html">登录</a></li>
@@ -58,7 +59,7 @@
                 <!-- logo -->
                 <div class="row">
                     <div class="logo">
-                        <a href="#">第一新闻</a>
+                        <a href="index.html">第一新闻</a>
                     </div>
                     <!-- 侧边导航栏 -->
                     <ul class="navMenu clearfix">
@@ -113,15 +114,6 @@
 
                         </div>
                     </div>
-                    <!-- 最新评论 -->
-                    <div class="newComment">
-                        <div class="title">
-                            <h3>最新评论</h3>
-                        </div>
-                        <ul class="newContent">
-
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
@@ -135,8 +127,8 @@
         {{else if username!=''}}
         <li><a href="javascript:;">{{username}}</a></li>
         <li><a href="javascript:;">{{roleName}}</a></li>
-            {{if code!=2&&code!=''}}
-                <li><a href="javascript:;" id="gotoBack">去后台</a></li>
+            {{if code!=2&&code!=null}}
+                <li><a href="javascript:;" id="gotoBack" target="_blank">去后台</a></li>
             {{/if}}
             <li><a href="javascript:;" id="logout">退出</a></li>
         {{/if}}
@@ -185,17 +177,19 @@
                 </div>
                 <p class="author"><i>{{$value.author.username}}</i>发布于<i>{{$imports.dateFomate($value.uploadDate)}}</i>
                 </p>
-                <p class="content">
+                <div class="content">
                     {{@$value.content}}
-                </p>
+                </div>
                 <div class="meta">
                     <i>阅读({{$value.read}})</i>
                     <i>评论({{$value.comment}})</i>
-                    <a href="javascript:;"><i class="fa fa-thumbs-up"></i>点赞({{$value.praise}})</a>
+                    {{if flag!=null}}
+                    <a href="javascript:;" id="praisePost" data-id="{{$value._id}}"><i class="fa fa-thumbs-up"></i>点赞({{$value.praise}})</a>
+                    {{/if}}
                 </div>
             </div>
             <div class="col-md-3 cover hidden-xs">
-                <a href="javascript:;"><img src="http://localhost/{{$value.cover}}" alt=""></a>
+                <a href="detail.html?id={{$value._id}}"><img src="http://localhost/{{$value.cover}}" alt=""></a>
             </div>
         </div>
         {{/each}}
@@ -215,132 +209,50 @@
         {{/each}}
     </script>
 
-    <script type="text/html" id="tpl7">
-        {{each arr}}
-        <li>
-            <div class="avatar">
-                <img src="http://localhost/{{$value.article.author.avatar}}" alt="">
-            </div>
-            <div class="content">
-                <p class="info"><i class="author">{{$value.author}}</i>于<i>{{$imports.dateFomate($value.createDate)}}</i>说:</p>
-                <p class="comment">{{$value.content}}</p>
-            </div>
-        </li>
-        {{/each}}
-    </script>
-
     <script type="text/html" id="tpl12">
         {{each arr1}}
-        <li><a href="list.html?id={{$value._id}}">{{$value.cateName}}</a></li>
+        <li><a href="list.html?id={{$value._id}}" data-id="{{$value._id}}">{{$value.cateName}}</a></li>
         {{/each}}
     </script>
+
+    <script type="text/html" id="tpl20">
+        <div class="title">
+            <h3>搜索结果</h3>
+        </div>
+        <div class="main">
+        {{each arr}}
+        <div class="row">
+            <div class="col-md-9">
+                <div class="main-title">
+                    <a href="detail.html?id={{$value._id}}"><i>{{$value.categories.cateName}}</i>{{$value.title}}</a>
+                </div>
+                <p class="author"><i>{{$value.author.username}}</i>发布于<i>{{$imports.dateFomate($value.uploadDate)}}</i>
+                </p>
+                <p class="content">
+                    {{@$value.content}}
+                </p>
+                <div class="meta">
+                    <i>阅读({{$value.read}})</i>
+                    <i>评论({{$value.comment}})</i>
+                    {{if flag!=null}}
+                    <a href="javascript:;" id="praisePost" data-id="{{$value._id}}"><i class="fa fa-thumbs-up"></i>点赞({{$value.praise}})</a>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="col-md-3 cover hidden-xs">
+                <a href="detail.html?id={{$value._id}}"><img src="http://localhost/{{$value.cover}}" alt=""></a>
+            </div>
+        </div>
+        {{/each}}
+        </div>
+    </script>
+
+
     <script src="/assets/js/common.js"></script>
     <script src="/assets/js/index.js"></script>
+
     <script>
-        // var html = template('tpl1', {
-        //     username: window.sessionStorage.getItem('username'),
-        //     roleName: JSON.parse(window.sessionStorage.getItem('role')).roleName,
-        //     code: JSON.parse(window.sessionStorage.getItem('role')).code
-        // })
-        // document.getElementById('info').innerHTML = html
-        // $('#logout').on('click', function () {
-        //     window.sessionStorage.clear()
-        //     location.href = 'index.html'
-        // })
-        // $('#gotoBack').on('click', function () {
-        //     location.href = "http://localhost:3000/login"
-        // })
-        // $.ajax({
-        //     type: 'get',
-        //     url: 'http://localhost/privates/categories',
-        //     success: function (data) {
-        //         var html = template('tpl2', {
-        //             arr: data.data
-        //         })
-        //         $('.navMenu').html(html)
-        //     }
-        // })
-        // $.ajax({
-        //     type: 'get',
-        //     url: 'http://localhost/privates/swiper',
-        //     success: function (data) {
-        //         var html = template('tpl3', {
-        //             swiper: data.data
-        //         })
-        //         $('.swiper-container').html(html)
-        //         var swiper = new Swiper('.swiper-container', {
-        //             slidesPerView: 1,
-        //             spaceBetween: 30,
-        //             loop: true,
-        //             pagination: {
-        //                 el: '.swiper-pagination',
-        //                 clickable: true,
-        //             },
-        //             navigation: {
-        //                 nextEl: '.swiper-button-next',
-        //                 prevEl: '.swiper-button-prev',
-        //             },
-        //             autoplay: {
-        //                 delay: 2500,
-        //                 disableOnInteraction: false,
-        //             },
-        //         });
-        //     }
-        // })
-        // // 每个30s重新获取
-        // $.ajax({
-        //     type: 'get',
-        //     url: 'http://localhost/privates/popular',
-        //     success: function (data) {
-        //         let postArr = new Set()
-        //         while (postArr.size < 4) {
-        //             var num = rd(data.data.length, 0)
-        //             postArr.add(data.data[num])
-        //         }
-        //         var html = template('tpl4', {
-        //             arr: [...postArr]
-        //         })
-        //         $('.popular-upload').html(html)
-        //     }
-        // })
-
-        // $.ajax({
-        //     type: 'get',
-        //     url: 'http://localhost/privates/newest',
-        //     success: function (data) {
-        //         var html = template('tpl5', {
-        //             arr: data.data
-        //         })
-        //         $('.newest .main').html(html)
-        //     }
-        // })
-
-        // $.ajax({
-        //     type: 'get',
-        //     url: 'http://localhost/privates/randomPost',
-        //     success: function (data) {
-        //         let randomPost = new Set()
-        //         while (randomPost.size <= 2) {
-        //             var num = rd(data.data.length, 0)
-        //             randomPost.add(data.data[num])
-        //         }
-        //         var html = template('tpl6', {
-        //             arr: [...randomPost]
-        //         })
-        //         $('.random .randomPost').html(html)
-        //     }
-        // })
-    
-        // $.ajax({
-        //     type:'get',
-        //     url:'http://localhost/privates/newComment',
-        //     success:function(data){
-        //         var html=template('tpl7',{
-        //             arr:data.data
-        //         })
-        //         $('.newContent').html(html)
-        //     }
-        // })
+        
     </script>
 </body>
 

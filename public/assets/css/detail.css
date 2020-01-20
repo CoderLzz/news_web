@@ -15,7 +15,7 @@
 .navbar {
     margin-bottom: 0px;
 }
-.left,.main,.search,.random,.newComment{
+.left,.main,.search,.random,.newComment,.commentList{
     background-color: #fff;
 }
 .middle>.row{
@@ -89,6 +89,33 @@
     margin-top: 10px;
     padding: 5px 15px;
 }
+.newest .commentList{
+    margin-top: 20px;
+    padding: 10px;
+}
+.newest .commentList li{
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+.avatar{
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    margin-top: 15px;
+    border-radius: 50%;
+}
+.avatar img{
+    width: 100%;
+    height: 100%;
+}
+.commentList .content{
+    margin: 15px 0 15px 10px;
+}
+.commentList .comment{
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+}
 
 
 /* 搜索开始 */
@@ -148,34 +175,84 @@
 .randomPost:last-child{
     margin-bottom: 0px;
 }
-/* 最新评论 */
-.newComment{
-    padding: 20px;
+
+/* 最新发布 */
+/* .newest{
+    padding:20px;
+    padding-bottom:0px ;
+    margin-top: 20px;
+} */
+.main{
     margin-top: 20px;
 }
-.newComment ul{
-    margin-top: 20px;
-}
-.newComment li{
-    display: flex;
-    border-bottom: 1px solid #eee;
-}
-.avatar{
-    overflow: hidden;
-    height: 40px;
-    width: 40px;
-    margin-top: 15px;
-    border-radius: 50%;
-}
-.avatar img{
+.newest .main .cover a{
+    display: inline-block;
     width: 100%;
-    height: 100%;
 }
-.newComment .content{
-    margin: 15px 0 15px 10px;
+.newest .main img{
+    width: 100%;
 }
-.content .comment{
-    margin-top: 5px;
+.main-title a{
+    display: block;
+}
+.main-title a i{
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    height: 25px;
+    width: 50px;
+    margin-right: 10px;
+    background-color: red;
+    font-style: normal;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+}
+.main-title a i::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left:5px solid red;
+}
+.main-title a{
+    font-size: 23px;
+    line-height: 23px;
+}
+.main .author{
     font-size: 12px;
     color: #666;
+    margin-top: 10px;
+}
+.main .author i:first-child{
+    margin-right: 5px;
+}
+.main .content{
+    margin-top: 10px;
+    color: #666;
+    line-height: 20px;
+}
+.main .meta {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.main .meta>i{
+    margin-right: 20px;
+}
+.main .meta a i{
+    margin-right: 5px;
+}
+.main .cover a{
+    margin-top: 60px;
+}
+.main .row{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
 }

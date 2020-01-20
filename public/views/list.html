@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="/assets/lib/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/index.css">
     <link rel="stylesheet" href="/assets/css/common.css">
-    <link rel="stylesheet" href="../assets/lib/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/lib/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="http://localhost/favicon/favicon.ico" type="image/x-icon">
 
     <script src="/assets/lib/js/jquery-3.4.1.min.js"></script>
     <script src="/assets/lib/js/bootstrap.min.js"></script>
     <script src="/assets/lib/js/template-web.js"></script>
-    <title>第一新闻</title>
+    <!-- <title>第一新闻</title> -->
 </head>
 
 <body>
@@ -38,9 +39,9 @@
                         </ul>
                         <form class="navbar-form navbar-left">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="输入关键字">
+                                <input type="text" class="form-control" placeholder="输入关键字" id="searchIn">
                             </div>
-                            <button type="submit" class="btn btn-default">搜索</button>
+                            <button type="submit" class="btn btn-default" id="search">搜索</button>
                         </form>
                         <ul class="nav navbar-nav navbar-right" id="info">
                             <li><a href="javascript:;" class="login">登录</a></li>
@@ -55,7 +56,7 @@
                 <div class="row">
                     <!-- logo -->
                     <div class="logo">
-                        <a href="#">第一新闻</a>
+                        <a href="index.html">第一新闻</a>
                     </div>
                     <!-- 侧边导航栏 -->
                     <ul class="navMenu clearfix">
@@ -97,15 +98,6 @@
 
                         </div>
                     </div>
-                    <!-- 最新评论 -->
-                    <div class="newComment">
-                        <div class="title">
-                            <h3>最新评论</h3>
-                        </div>
-                        <ul class="newContent">
-                            
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
@@ -119,7 +111,7 @@
         {{else if username!=''}}
         <li><a href="javascript:;">{{username}}</a></li>
         <li><a href="javascript:;">{{roleName}}</a></li>
-            {{if code!=2&&code!=''}}
+            {{if code!=2&&code!=null}}
                 <li><a href="javascript:;" id="gotoBack">去后台</a></li>
             {{/if}}
             <li><a href="javascript:;" id="logout">退出</a></li>
@@ -145,20 +137,6 @@
         </div>
         {{/each}}
     </script>
-
-    <script type="text/html" id="tpl7">
-        {{each arr}}
-        <li>
-            <div class="avatar">
-                <img src="http://localhost/{{$value.article.author.avatar}}" alt="">
-            </div>
-            <div class="content">
-                <p class="info"><i>{{$value.author}}</i>于<i>{{$imports.dateFomate($value.createDate)}}</i>说:</p>
-                <p class="comment">{{$value.content}}</p>
-            </div>
-        </li>
-        {{/each}}
-    </script>
     <script type="text/html" id="tpl8">
         {{each arr}}
         <div class="row">
@@ -169,13 +147,15 @@
                 </div>
                 <p class="author"><i>{{$value.author.username}}</i>发布于<i>{{$imports.dateFomate  ($value.uploadDate)}}</i>
                 </p>
-                <p class="content">
+                <div class="content">
                     {{@$value.content}}
-                </p>
+                </div>
                 <div class="meta">
                     <i>阅读({{$value.read}})</i>
                     <i>评论({{$value.comment}})</i>
-                    <a href="javascript:;"><i class="fa fa-thumbs-up"></i>点赞({{$value.praise}})</a>
+                    {{if flag!=null}}
+                    <a href="javascript:;" id="praisePost" data-id="{{$value._id}}"><i class="fa fa-thumbs-up"></i>点赞({{$value.praise}})</a>
+                    {{/if}}
                 </div>
             </div>
             <div class="col-md-3 cover hidden-xs">
@@ -193,6 +173,37 @@
         {{/each}}
     </script>
 
+    <script type="text/html" id="tpl20">
+        <div class="title">
+            <h3>搜索结果</h3>
+        </div>
+        <div class="main">
+        {{each arr}}
+        <div class="row">
+            <div class="col-md-9">
+                <div class="main-title">
+                    <a href="detail.html?id={{$value._id}}"><i>{{$value.categories.cateName}}</i>{{$value.title}}</a>
+                </div>
+                <p class="author"><i>{{$value.author.username}}</i>发布于<i>{{$imports.dateFomate($value.uploadDate)}}</i>
+                </p>
+                <p class="content">
+                    {{@$value.content}}
+                </p>
+                <div class="meta">
+                    <i>阅读({{$value.read}})</i>
+                    <i>评论({{$value.comment}})</i>
+                    {{if flag!=null}}
+                    <a href="javascript:;" id="praisePost" data-id="{{$value._id}}"><i class="fa fa-thumbs-up"></i>点赞({{$value.praise}})</a>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="col-md-3 cover hidden-xs">
+                <a href="detail.html?id={{$value._id}}"><img src="http://localhost/{{$value.cover}}" alt=""></a>
+            </div>
+        </div>
+        {{/each}}
+        </div>
+    </script>
     <script src="/assets/js/common.js"></script>
     <script src="/assets/js/list.js"></script>
 </body>

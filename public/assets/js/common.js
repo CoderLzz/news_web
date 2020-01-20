@@ -26,7 +26,7 @@ $('#logout').on('click', function () {
     location.href = 'index.html'
 })
 $('#gotoBack').on('click', function () {
-    location.href = "http://localhost:3000/login"
+    window.open('http://localhost:3000/login', '_blank')
 })
 $.ajax({
     type: 'get',
@@ -61,18 +61,39 @@ $.ajax({
     }
 })
 
+$('#search').on('click',function(e){
+    e.preventDefault()
+    var value=$('#searchIn').val()
+    $.ajax({
+        type:'get',
+        url:'http://localhost/privates/post',
+        data:{
+            searchPost:value,
+            size:5,
+            currentPage:1,
+            postCate:'',
+            postState:''
+        },
+        success:function(data){
+            let arr=data.data.records.filter(item=>{
+                return item.state==true
+            })
+            var html=template('tpl20',{
+                arr:arr,
+                flag:window.sessionStorage.getItem('username')
+            })
+            $('.swiper-container').hide()
+            $('.popular').hide()
+            $('.newest').html(html)
+        }
+    })
+})
+
 $.ajax({
     type:'get',
-    url:'http://localhost/privates/newComment',
+    url:'http://localhost/privates/web',
     success:function(data){
-        let newComment=new Set()
-        while(newComment.size<6){
-            var num=rd(data.data.length,0)
-            newComment.add(data.data[num])
-        }
-        var html=template('tpl7',{
-            arr:[...newComment]
-        })
-        $('.newContent').html(html)
+        $('head').append($('<title>'+data.data[0].webTitle+'</title>'))
     }
 })
+

@@ -7,9 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/assets/lib/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/lib/css/noticejs.css">
 
     <script src="/assets/lib/js/jquery-3.4.1.min.js"></script>
     <script src="/assets/lib/js/bootstrap.min.js"></script>
+    <script src="/assets/lib/js/notice.js"></script>
     <title>第一新闻</title>
 </head>
 
@@ -33,25 +35,7 @@
         </form>
     </div>
 
-    <script>
-        $('#loginForm').on('submit',function(e){
-            e.preventDefault()
-            var form=$(this).serialize()
-            $.ajax({
-                type:'post',
-                url:'http://localhost/login',
-                data:form,
-                success:function(data){
-                    console.log(data);
-                    window.sessionStorage.setItem('token',data.data.token)
-                    window.sessionStorage.setItem('username',data.data.username)
-                    window.sessionStorage.setItem('role',JSON.stringify(data.data.role))
-                    location.href="index.html"
-                }
-            })
-        })
-    
-    </script>
+    <script src="/assets/js/login.js"></script>
 </body>
 
 </html>

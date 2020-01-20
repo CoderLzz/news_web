@@ -78,3 +78,14 @@ a:hover{
     color: red;
 }
 
+.newest .main .content img{
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+}
+.ql-video{
+    display: block;
+    width: 300px;
+    margin: 0 auto; 
+}
+
