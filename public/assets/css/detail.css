@@ -15,7 +15,7 @@
 .navbar {
     margin-bottom: 0px;
 }
-.left,.main,.search,.random,.newComment,.commentList{
+.left,.main,.search,.random,.newComment,.list{
     background-color: #fff;
 }
 .middle>.row{
@@ -35,7 +35,6 @@
 .left li:hover {
     background-color: #fff;
 }
-
 .left li a {
     color: #777;
 }
@@ -89,8 +88,7 @@
     margin-top: 10px;
     padding: 5px 15px;
 }
-.newest .commentList{
-    margin-top: 20px;
+.newest .list{
     padding: 10px;
 }
 .newest .commentList li{
@@ -115,6 +113,18 @@
     margin-top: 5px;
     font-size: 12px;
     color: #666;
+}
+.newest .main .content p{
+    margin: 10px 0;
+    font-size: 15px;
+    text-indent: 2em;
+    line-height: 1.8;
+}
+.newest .commentCon{
+    margin-bottom: 30px;
+}
+.newest .list{
+    margin-bottom: 100px;
 }
 
 

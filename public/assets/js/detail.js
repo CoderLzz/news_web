@@ -81,7 +81,13 @@ function run(){
                 arr:data.data
             })
             $('.commentList').html(html)
+            if ($('.newest .commentList').children().length == 0) {
+                $('.newest .list').hide()
+            } else {
+                $('.newest .list').show()
+            }
         }
     })
 }
 run()
+

@@ -143,12 +143,12 @@
             <div class="col-md-9">
                 <div class="main-title">
                     <a href="detail.html?id={{$value._id}}"><i>{{$value.categories.cateName}}</i>
-                        {{$value.title}}</a>
+                        <span>{{$value.title}}</span></a>
                 </div>
                 <p class="author"><i>{{$value.author.username}}</i>发布于<i>{{$imports.dateFomate  ($value.uploadDate)}}</i>
                 </p>
                 <div class="content">
-                    {{@$value.content}}
+                    {{@$value.content.replace(/<\/?.+?\/?>/g,'').slice(0,90).concat('...')}}
                 </div>
                 <div class="meta">
                     <i>阅读({{$value.read}})</i>
@@ -159,7 +159,7 @@
                 </div>
             </div>
             <div class="col-md-3 cover hidden-xs">
-                <a href="javascript:;"><img src="http://localhost/{{$value.cover}}" alt=""></a>
+                <a href="detail.html?id={{$value._id}}"><img src="http://localhost/{{$value.cover}}" alt=""></a>
             </div>
         </div>
         {{/each}}
@@ -182,12 +182,12 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="main-title">
-                    <a href="detail.html?id={{$value._id}}"><i>{{$value.categories.cateName}}</i>{{$value.title}}</a>
+                    <a href="detail.html?id={{$value._id}}"><i>{{$value.categories.cateName}}</i><span>{{$value.title}}</span></a>
                 </div>
                 <p class="author"><i>{{$value.author.username}}</i>发布于<i>{{$imports.dateFomate($value.uploadDate)}}</i>
                 </p>
                 <p class="content">
-                    {{@$value.content}}
+                    {{@$value.content.replace(/<\/?.+?\/?>/g,'').slice(0,90).concat('...')}}
                 </p>
                 <div class="meta">
                     <i>阅读({{$value.read}})</i>

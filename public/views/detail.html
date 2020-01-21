@@ -77,9 +77,11 @@
                         <div class="commentCon">
 
                         </div>
-                        <ul class="commentList">
-                            
-                        </ul>
+                        <div class="list">
+                            <ul class="commentList">
+
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -145,17 +147,18 @@
     </script>
     <script type="text/html" id="tpl9">
         <div class="header">
-            当前位置：<a href="#">{{obj.categories.cateName}}</a>
+            当前位置：<a href="list.html?id={{obj.categories._id}}">{{obj.categories.cateName}}</a>
         </div>
         <h3 class="title">
             {{obj.title}}
         </h3>
         <div class="meta">
             <i>{{obj.author.username}}</i>发布于<i>{{$imports.dateFomate(obj.uploadDate)}}</i>
-            分类：<a href="#">{{obj.categories.cateName}}</a>
+            分类：<a href="list.html?id={{obj.categories._id}}">{{obj.categories.cateName}}</a>
             <i class="read">阅读({{obj.read}})</i><i>评论({{obj.comment}})</i>
             {{if flag!=null}}
-                <a href="javascript:;" id="praisePost" data-id="{{obj._id}}"><i class="fafa-thumbs-up"></i>点赞({{obj.praise}})</a>
+            <a href="javascript:;" id="praisePost" data-id="{{obj._id}}"><i
+                    class="fafa-thumbs-up"></i>点赞({{obj.praise}})</a>
             {{/if}}
         </div>
         <div class="content">
@@ -199,33 +202,36 @@
             <h3>搜索结果</h3>
         </div>
         <div class="main">
-        {{each arr}}
-        <div class="row">
-            <div class="col-md-9">
-                <div class="main-title">
-                    <a href="detail.html?id={{$value._id}}"><i>{{$value.categories.cateName}}</i>{{$value.title}}</a>
+            {{each arr}}
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="main-title">
+                        <a
+                            href="detail.html?id={{$value._id}}"><i>{{$value.categories.cateName}}</i>{{$value.title}}</a>
+                    </div>
+                    <p class="author">
+                        <i>{{$value.author.username}}</i>发布于<i>{{$imports.dateFomate($value.uploadDate)}}</i>
+                    </p>
+                    <p class="content">
+                        {{@$value.content}}
+                    </p>
+                    <div class="meta">
+                        <i>阅读({{$value.read}})</i>
+                        <i>评论({{$value.comment}})</i>
+                        {{if flag!=null}}
+                        <a href="javascript:;" id="praisePost" data-id="{{$value._id}}"><i
+                                class="fa fa-thumbs-up"></i>点赞({{$value.praise}})</a>
+                        {{/if}}
+                    </div>
                 </div>
-                <p class="author"><i>{{$value.author.username}}</i>发布于<i>{{$imports.dateFomate($value.uploadDate)}}</i>
-                </p>
-                <p class="content">
-                    {{@$value.content}}
-                </p>
-                <div class="meta">
-                    <i>阅读({{$value.read}})</i>
-                    <i>评论({{$value.comment}})</i>
-                    {{if flag!=null}}
-                    <a href="javascript:;" id="praisePost" data-id="{{$value._id}}"><i class="fa fa-thumbs-up"></i>点赞({{$value.praise}})</a>
-                    {{/if}}
+                <div class="col-md-3 cover hidden-xs">
+                    <a href="detail.html?id={{$value._id}}"><img src="http://localhost/{{$value.cover}}" alt=""></a>
                 </div>
             </div>
-            <div class="col-md-3 cover hidden-xs">
-                <a href="detail.html?id={{$value._id}}"><img src="http://localhost/{{$value.cover}}" alt=""></a>
-            </div>
-        </div>
-        {{/each}}
+            {{/each}}
         </div>
     </script>
-    
+
 
     <script src="/assets/js/common.js"></script>
     <script src="/assets/js/detail.js"></script>
